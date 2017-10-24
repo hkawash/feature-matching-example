@@ -1,16 +1,16 @@
 # coding: utf-8
-#
-# Computer Vision (week 3,4): Example of feature matching & homography
-#   Hiroaki Kawashima <kawashima@i.kyoto-u.ac.jp>
-#
-#   Ref: https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_feature_homography/py_feature_homography.html
-#
+"""
+ Computer Vision 2017 (week 3,4): Example of feature matching & homography
+   Hiroaki Kawashima <kawashima@i.kyoto-u.ac.jp>
+
+   Ref: https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_feature_homography/py_feature_homography.html
+"""
 
 import numpy as np
 import cv2
 
 class ObjectDetector:
-    """ Object detector for VideoCapture using feature matching """
+    """ Realtime planer object detector using feature matching """
 
     def __init__(self):
         # Feature-point detector
@@ -36,15 +36,15 @@ class ObjectDetector:
         self.rect_br_outer_xy = (self.sub_bottomright[1] + self.rect_thickness,\
                                  self.sub_bottomright[0] + self.rect_thickness)
 
-        self.ratio = 0.6  # Threshold for the distance of feature (descriptor) vectors
+        self.ratio = 0.4  # Threshold for the distance of feature (descriptor) vectors
         self.registered = False
         self.min_match_count = 5
 
     def register(self):
         """ Register target object """
 
-        print("Hold a target object close to the camera.")
-        print(" (*) Make sure the green rectangle does not contain any background part.")
+        print("\nHold a target object close to the camera.")
+        print("Make sure the object fully covers (background is not visible) inside the rectangle.")
         print("Then, press 'r' to register the object.\n")
 
         while self.vidcap.isOpened():
