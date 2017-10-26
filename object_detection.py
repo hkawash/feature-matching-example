@@ -10,7 +10,7 @@ import numpy as np
 import cv2
 
 class ObjectDetector:
-    """ Realtime planer object detector using feature matching """
+    """ Realtime planar object detector using feature matching """
 
     def __init__(self):
         # Feature-point detector
