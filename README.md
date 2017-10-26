@@ -2,10 +2,10 @@
 
 This is an example to show how feature point detection can be used to find a registered planer object from video images.
 
-![registration](registration.png)
+![registration](register.png)
 ![detection](detection.png)
 
-(The number of matching is not large in this example... but may help you find how it works.)
+The number of matching is not large (not good) in this example... but may help you find how it works.
 
 ## Prerequisite
 
