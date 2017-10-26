@@ -3,7 +3,7 @@
 This is an example to show how feature point detection can be used to find a registered planer object from video images.
 
 Registration step:
-<img alt="registration" src="register.png" height="256">
+<img alt="registration" src="registeration.png" height="256">
 
 Detection step:
 <img alt="detection" src="detection.png" height="256">
@@ -37,5 +37,5 @@ Tips: Use high-contrast (e.g., black and white) textured plane object.
 
 ## Bug
 
-Error check is not enough and the program may be terminated at `perspectiveTransform` in some cases.
+Error check is not enough and the program may be terminated at for example `perspectiveTransform` in some cases.
 
