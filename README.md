@@ -1,6 +1,6 @@
 # Feature detection and matching example
 
-This is an example to show how feature point detection can be used to find a registered planer object from video images.
+This is an example to show how feature point detection can be used to find a registered planar object from video images.
 
 Registration step:
 <img alt="registration" src="registeration.png" height="256">
@@ -8,7 +8,7 @@ Registration step:
 Detection step:
 <img alt="detection" src="detection.png" height="256">
 
-The number of matching is not large (not good) in this example... but may help you find how it works.
+The number of matching is not enough in the above example image, but it may help you find how it works.
 
 ## Prerequisite
 
@@ -30,10 +30,10 @@ Python 3.5 and OpenCV 3.
    > python object_detection.py
    ```
 
-1. Press 'r' to register a query image with a target (textured planer) object. Then object detection will start.
+1. Press 'r' to register a query image with a target (textured planar) object. Then object detection will start.
 1. Press 'q' to quit the detection.
 
-Tips: Use high-contrast (e.g., black and white) textured plane object.
+Tips: Use high-contrast (e.g., black and white) textured planar object.
 
 ## Bug
 
