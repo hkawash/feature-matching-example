@@ -36,7 +36,7 @@ class ObjectDetector:
         self.rect_br_outer_xy = (self.sub_bottomright[1] + self.rect_thickness,\
                                  self.sub_bottomright[0] + self.rect_thickness)
 
-        self.ratio = 0.4  # Threshold for the distance of feature (descriptor) vectors
+        self.ratio = 0.75  # Threshold for the distance of feature (descriptor) vectors
         self.registered = False
         self.min_match_count = 5
 
