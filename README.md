@@ -2,7 +2,10 @@
 
 This is an example to show how feature point detection can be used to find a registered planer object from video images.
 
-![demoimage](demoimage.png)
+![registration](registration.png)
+![detection](detection.png)
+
+(The number of matching is not large in this example... but may help you find how it works.)
 
 ## Prerequisite
 
@@ -26,4 +29,10 @@ Python 3.5 and OpenCV 3.
 
 1. Press 'r' to register a query image with a target (textured planer) object. Then object detection will start.
 1. Press 'q' to quit the detection.
+
+Tips: Use high-contrast (e.g., black and white) textured plane object.
+
+## Bug
+
+Error check is not enough and the program may be terminated at `perspectiveTransform` in some cases.
 
