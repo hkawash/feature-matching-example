@@ -2,8 +2,8 @@
 
 This is an example to show how feature point detection can be used to find a registered planer object from video images.
 
-<img alt="registration" src="register.png" height="300">
-<img alt="detection" src="detection.png" height="300">
+<img alt="registration" src="register.png" height="256">
+<img alt="detection" src="detection.png" height="256">
 
 The number of matching is not large (not good) in this example... but may help you find how it works.
 
