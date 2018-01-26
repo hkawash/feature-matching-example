@@ -19,7 +19,7 @@ Python 3.5 and OpenCV 3.
 1. Install OpenCV.
    
    ```
-   > conda install -c mempo opencv3
+   > conda install -c menpo opencv3 #Should be "menpo" instead of "mempo"
    ```
 
 ## How to use
