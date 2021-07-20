@@ -39,6 +39,7 @@ class ObjectDetector:
         self.ratio = 0.75  # Threshold for the distance of feature (descriptor) vectors
         self.registered = False
         self.min_match_count = 5
+        self.show_rectangle = True
 
     def register(self):
         """ Register target object """
@@ -70,7 +71,8 @@ class ObjectDetector:
             return
 
         print("Start detection...")
-        print("Press 'q' to quit.\n")
+        print("Press 'q' to quit.")
+        print("Press 'h' to hide a green rectangle.\n")
 
         bf = cv2.BFMatcher()  # Prepare a Blute-Force (BF) matcher
 
@@ -87,7 +89,7 @@ class ObjectDetector:
             good = [[m] for m, n in matches if m.distance < self.ratio * n.distance]
 
             # Find Homography
-            if len(good) > self.min_match_count:
+            if (len(good) > self.min_match_count) and self.show_rectangle:
                 src_pts = np.float32([self.kp0[m[0].queryIdx].pt for m in good]).reshape(-1, 1, 2)
                 dst_pts = np.float32([kp[m[0].trainIdx].pt for m in good]).reshape(-1, 1, 2)
 
@@ -105,8 +107,12 @@ class ObjectDetector:
             img = cv2.drawMatchesKnn(self.queryimg, self.kp0, frame, kp, good, None, **draw_params)
             cv2.imshow("Detection (press 'q' to quit)", img)
 
-            if cv2.waitKey(1) & 0xFF == ord('q'):
+            key_pressed = cv2.waitKey(1) 
+            if key_pressed & 0xFF == ord('q'):
                 break
+
+            if key_pressed & 0xFF == ord('h'):
+                self.show_rectangle = False
 
     def close(self):
         """ Release VideoCapture and destroy windows """
